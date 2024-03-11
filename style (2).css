@@ -1,0 +1,113 @@
+body {
+    background-color: #c2f905;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Times New Roman';
+}
+header {
+    color: #fb0303;
+    font-size: 36pt;
+    text-align: center;
+}
+.mainPart {
+    position: relative;
+    height: 90%;
+}
+h1 {
+    margin-bottom: 0%;
+    margin-top: 3%;
+}
+footer {
+    color: #fb0481; 
+    font-size: 30pt;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+    margin-right: auto;
+    margin-left: auto;
+    width: 60%;
+    height: 10%;  
+}
+.inputText {
+    background-color: #fb0303;
+    color: #ffffff;
+    font-size: 20pt;
+    float: left;
+    width:60%;
+}
+.addButton {
+    cursor: pointer;
+    background-color: #c3f;
+    color: #fb0303;
+    font-size: 20pt;
+    width: 20%;
+    float: left;
+}
+.addButton:hover {
+    background-color: #a528f63;
+    color: #ffffff;
+}
+.clearButton {
+    cursor: pointer;
+    background-color: #c3f;
+    color: #fb0303;
+    width: 20%;
+    font-size: 20pt;
+    float: left;
+}
+.clearButton:hover {
+    background-color: #fb0303;
+    color: #ffffff;
+}
+.hiddenText {
+    color: #fb0303;
+    font-size: 27pt;
+}
+.uList {
+    cursor: pointer;
+    position:absolute;
+    z-index: 2;
+    background-color: #ff00ff;
+    font-size: 27pt;
+    margin-right: 30%;
+    margin-left: 30%;   
+    margin-top: 5%;
+    color: #ffffff; 
+    width:40%;
+    height:60%;
+    padding-top: 0%;
+    overflow:auto;
+    button {
+        cursor: pointer;
+        margin: 5px;
+        background-color: #0000ff;
+        font-size: 30pt;
+        color: #fb0303;
+        float: right;
+        height: 60px;
+        width: 60px;
+    }
+    sub {
+        color: #c3f;
+        display: grid;
+        font-size: 18pt;
+    }
+}
+ul li {
+    display: flex;
+    justify-content: space-between;
+}
+ul li:hover {
+    background: #fb0481;
+    color: #fb0303;
+    button{
+        background: #000000;
+        color: #ffffff;
+    }
+}
+ul li.checked {
+    color: #ff00ff;
+    text-decoration: line-through;
+}
