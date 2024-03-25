@@ -1,0 +1,75 @@
+Задача 1
+var n = 123;
+function reverse_the_number(n) {
+    var digit = 0;
+    var result = 0;
+    while(n) {
+        digit = n % 10;
+        result = (result * 10) + digit;
+        n = n / 10 | 0;
+    }
+    return result;
+}
+console.log(reverse_the_number(n));
+
+var n = 111333456;
+var mas = Array.from(String(n), Number);
+var outputMas = [];
+function removeWithFilter(mas) {
+    outputMas = mas.filter(function (v, i, self) {
+        return i == self.indexOf(v);
+    });
+    return outputMas;
+}
+outputMas = removeWithFilter(mas);
+let n2 = outputMas.join('');
+console.log(n2);
+
+var n = 1355567;
+var nString = n.toString();
+var nMas = [...nString];
+var count = {};
+for (var num of nMas)
+{
+    count[num] = count[num] ? count[num] + 1 : 1;
+}
+console.log(count[5]);
+
+function toBinary(n) {
+    return n.toString(2);
+}
+var n = 1355567;
+var result = toBinary(n);
+console.log(result);
+var count = (result.match(/00/g) || []).length;
+var count2 = (result.match(/1111/g) || []).length;
+console.log(count, count2);
+
+Задача 2
+function check(s) {
+    var match = s.match(/(.)(?!.*\1)(?<!\1.+)/);
+    return match && match[1];
+}
+console.log(check("фывфавыапрс"));
+
+function makeid(length) {
+    var result = '';
+    const symbols = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const symbolsLength = symbols.length;
+    let count = 0;
+    while (count < length)
+    {
+        result += symbols.charAt(Math.floor(Math.random() * symbolsLength));
+        count += 1;
+    }
+    return result;
+}
+console.log(makeid(5));
+
+function findUnique(str) {
+    str = str.split("");
+    str = new Set(str);
+    str = [...str].join("");
+    return str;
+}
+console.log(findUnique("позволяеткопироватьтекстиз"));
