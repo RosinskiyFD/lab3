@@ -1,0 +1,155 @@
+Задача 1
+var n = prompt("Введите длину массива:");
+var mas = [];
+while (mas.length < n)
+{
+    a = Math.floor(Math.random() * n);
+    mas.push(a);
+}
+console.log(mas);
+function maxDifference(arr) {
+    var maxDiff = -1;
+    var min = arr[0];
+    for (var i = 0; i < arr.length; i++)
+    {
+        if (arr[i] > min && maxDiff < arr[i] - min)
+        {
+            maxDiff = arr[i] - min;
+        }
+        if (arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    return maxDiff;
+}
+console.log(maxDifference(mas));
+
+var n2 = prompt("Введите длину массива:");
+var mas2 = [];
+while (mas2.length < n)
+{
+    a = Math.floor(Math.random() * n);
+    mas2.push(a);
+}
+console.log(mas2);
+var unique = [...new Set(mas2)];
+console.log(unique);
+
+var mas3 = 
+[
+    {id: 1, isDone: true}, 
+    {id: 2, isDone: false},
+    {id: 3, isDone: true}
+];
+for (var i = 0; i < mas3.length; i++)
+{
+    if (mas3[i].isDone == true)
+    {
+        console.log(mas3[i]);
+    }
+}
+
+Задача 2
+var mas4 = [1, 4, 6, 3, 2];
+var newMas4 = [];
+var n = 2;
+for (var i = 0; i < mas4.length; i++)
+{
+    if (mas4[i] > n)
+    {
+        newMas4.push(mas4[i]);
+    }
+}
+newMas4;
+
+Array.prototype.flatten = function() {
+    return this.reduce(function(prev, cur) {
+        var more = [].concat(cur).some(Array.isArray);
+        return prev.concat(more ? cur.flatten() : cur);
+    }, []);
+};
+console.log([1, 4, [34, 1, 20], [6, [6, 12, 8], 6]].flatten());
+
+Задача 3
+var mas5 = [-7, 12, 4, 6, -4, -12, 0];
+var mas5B = [-1, 2, 4, 7, -4, 1, -2];
+var mas5C = [-1, 1, 0, 1];
+var mas5D = [-1, 1, -1, 1];
+var mas5E = [1, 1, 1, 0, -1];
+var mas5F = [0, 0];
+var mas5G = [];
+var target = 0;
+function zeroSum(arr, target) {
+    var count = 0;
+    for (var i = 0; i < 2 ** arr.length; i++)
+    {
+        var sum = 0;
+        var j = i;
+        var r = 0;
+        while (r < arr.length)
+        {
+            var k = j;
+            j = Math.floor(j / 2);
+            if (j * 2 != k)
+            {
+                sum += arr[r];
+            }
+            r++;
+        }
+        if (arr[i] + arr[i] == target)
+        {
+            count++;
+        }
+    }
+    console.log(count);
+    return(count);
+}
+zeroSum(mas5, target);
+zeroSum(mas5B, target);
+zeroSum(mas5C, target);
+zeroSum(mas5D, target);
+zeroSum(mas5E, target);
+zeroSum(mas5F, target);
+zeroSum(mas5G, target);
+
+var mas5 = [-7, 12, 4, 6, -4, -12, 0];
+var mas5B = [-1, 2, 4, 7, -4, 1, -2];
+var mas5C = [-1, 1, 0, 1];
+var mas5D = [-1, 1, -1, 1];
+var mas5E = [1, 1, 1, 0, -1];
+var mas5F = [0, 0];
+var mas5G = [];
+var target = 0;
+function zeroSum(arr, target) {
+    var count = 0;
+    for (var i = 0; i < 3 ** arr.length; i++)
+    {
+        var sum = 0;
+        var j = i;
+        var r = 0;
+        while (r < arr.length)
+        {
+            var k = j;
+            j = Math.floor(j / 3);
+            if (j * 3 != k)
+            {
+                sum += arr[r];
+            }
+            r++;
+        }
+        if (arr[i] + arr[i] == target)
+        {
+            count++;
+        }
+    }
+    console.log(count);
+    return(count);
+}
+zeroSum(mas5, target);
+zeroSum(mas5B, target);
+zeroSum(mas5C, target);
+zeroSum(mas5D, target);
+zeroSum(mas5E, target);
+zeroSum(mas5F, target);
+zeroSum(mas5G, target);

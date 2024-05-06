@@ -1,0 +1,137 @@
+function findMaxMin(mas) {
+    let max = Math.max(...mas);
+    let min = Math.min(...mas);
+    console.log("Максимальный элемент - " + max + ", минимальный - " + min + ".");
+}
+const arr = [1, 6, -1, 22, 13];
+findMaxMin(arr);
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+console.log(reverseString("!тевирП"));
+var s = prompt("Какую строку перевернуть?");
+console.log(reverseString(s));
+
+function sqrtSum(mas) {
+    let n;
+    let sum = 0;
+    for (let i = 0; i < mas.length; i++)
+    {
+        if (mas[i] % 2 == 0)
+        {
+            n = Math.sqrt(mas[i]);
+            for (const n of mas)
+            {
+                sum += n;
+            }
+        }
+    }
+    console.log(sum);
+}
+const arr = [3, 5, 8, 13, 21, 42];
+sqrtSum(arr);
+
+var hashMap = [];
+function createStr1HashMap(str1) {
+    [].map.call(str1, function(value, index, array) {
+        hashMap[value] = value in hashMap ? (hashMap[value] + 1) : 1;
+        return value;
+    });
+}
+function createStr2HashMap(str2) {
+    var valueExist = [].every.call(str2, function(value, index, array) {
+        if (value in hashMap)
+        {
+            hashMap[value] = hashMap[value] - 1;
+        }
+        return value in hashMap;
+    });
+    return valueExist;
+}
+function areStringsAnagram(valueExist) {
+    if (!valueExist)
+    {
+        return valueExist;
+    }
+    else
+    {
+        var isAnagram;
+        for (var i in hashMap)
+        {
+            if (hashMap[i] !== 0)
+            {
+                isAnagram = false;
+                break;
+            }
+            else
+            {
+                isAnagram = true;
+            }
+        }
+        return isAnagram;
+    }
+}
+function anagram(str1, str2) {
+    if (str1.length !== str2.length)
+    {
+        return false;
+    }
+    createStr1HashMap(str1);
+    var valueExist = createStr2HashMap(str2);
+    return areStringsAnagram(valueExist);
+}
+console.log(anagram("лунь", "нуль"));
+console.log(anagram("лунь", "ноль"));
+
+function palindrome(str) {
+    return str.split('').reverse().join('') == str;
+}
+console.log(palindrome("спеЛ как Лепс"));
+console.log(palindrome("123"));
+
+function fibonacci(number) {
+    let number1 = 0;
+    let number2 = 1;
+    for (let i = 0; i < number; i++)
+    {
+        let current = number1 + number2;
+        number1 = number2;
+        number2 = current;
+        console.log(current);
+    }
+}
+let n = prompt("Введите номер числа Фибоначчи:");
+fibonacci(n);
+
+function intersect(arr1, arr2) {
+    arr1.sort(function(a, b) {return a-b;});
+    arr2.sort(function(a, b) {return a-b;});
+    let i = 0;
+    let j = 0;
+    while (i < arr1.length && j < arr2.length)
+    {
+        if (arr1[i] < arr2[j])
+        {
+            i++;
+        }
+        else if (arr1[i] > arr2[j])
+        {
+            j++;
+        }
+        else
+        {
+            console.log(arr2[j++] + " ");
+            i++;
+        }
+    }
+}
+let arrA = [7, 1, 5, 2, 3, 6];
+let arrB = [3, 8, 6, 4, 9, 7];
+intersect(arrA, arrB);
+
+let i;
+for(i = 1; i <= 3; i++)
+{
+	console.log(i);
+}

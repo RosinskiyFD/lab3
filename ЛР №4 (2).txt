@@ -1,0 +1,55 @@
+Задача 1
+function getRandomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(getRandomNumber(1, 100));
+
+Задача 2
+function print(a) {
+    for(let value of a)
+    {
+        console.log(`${value}`);
+    }
+}
+function count(str, map) {
+    for (let i = 0; i < str.length; i++)
+    {
+        let k = map.get(str[i]);
+        map.set(str[i], k + 1);
+    }
+    print(map);
+}
+function countOccur(test, callback) {
+    if (test.length == 0)
+    {
+        console.log("Пустая строка");
+        return;
+    }
+    else
+    {
+        let a = new Map();
+        for (let i = 0; i < test.length; i++)
+        {
+            a.set(test[i], 0);
+        }
+        callback(test, a);
+    }
+}
+let test = "Росинский Филипп Дмитриевич";
+console.log(countOccur(test, count));
+
+function getPrime(n) {
+    var i = 2n;
+    var prime = 0n;
+    while (n >= 0n)
+    {
+        if (n % i != 0n)
+        {
+            n--;
+            prime = i;
+        }
+        i++;
+    }
+    return prime;
+}
+console.log(getPrime(prompt("Введите номер простого числа:")));

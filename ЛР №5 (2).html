@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>ЛР №5 (2) Задание 8</title>
+	</head>
+	<body>
+		<button onclick='minus(n)'>-</button>
+		<p id="replace">0</p>
+		<button onclick='plus(n)'>+</button>
+		<script>
+			var n = 0;
+			function minus(n) {
+				n -= 1;
+				document.getElementById("replace").innerText = n;
+			}
+			function plus(n) {
+				n += 1;
+				document.getElementById("replace").innerText = n;
+			}
+		</script>
+	</body>
+</html>
